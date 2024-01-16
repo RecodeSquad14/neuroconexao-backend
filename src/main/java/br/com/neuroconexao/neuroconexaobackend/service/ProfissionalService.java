@@ -1,4 +1,4 @@
 package br.com.neuroconexao.neuroconexaobackend.service;
 
-public class Profissional {
+public class ProfissionalService {
 }
