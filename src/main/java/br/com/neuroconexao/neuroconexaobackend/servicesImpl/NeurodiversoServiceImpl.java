@@ -1,4 +1,4 @@
-package br.com.neuroconexao.neuroconexaobackend.serviceimpl;
+package br.com.neuroconexao.neuroconexaobackend.servicesImpl;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,7 +45,7 @@ public class NeurodiversoServiceImpl implements NeurodiversoService {
             existingNeurodiverso.setSenha(neurodiverso.getSenha());
             existingNeurodiverso.setTelefone(neurodiverso.getTelefone());
             existingNeurodiverso.setDatanascimento(neurodiverso.getDatanascimento());
-            existingNeurodiverso.setPessoadesuporte(neurodiverso.getPessoadesuporte());
+           
             // Atualize outros campos conforme necessário
             return neurodiversoRepository.save(existingNeurodiverso);
         } else {

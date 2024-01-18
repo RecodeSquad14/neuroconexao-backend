@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import br.com.neuroconexao.neuroconexaobackend.models.Neurodiverso;
 import br.com.neuroconexao.neuroconexaobackend.services.NeurodiversoService;
 
@@ -44,8 +43,7 @@ public class NeurodiversoController {
         neurodiverso.setSenha(updatedNeurodiverso.getSenha());
         neurodiverso.setTelefone(updatedNeurodiverso.getTelefone());
         neurodiverso.setDatanascimento(updatedNeurodiverso.getDatanascimento());
-        neurodiverso.setPessoadesuporte(updatedNeurodiverso.getPessoadesuporte());
- 
+        
         ns.updateNeurodiverso(id, updatedNeurodiverso);
         return ResponseEntity.ok(neurodiverso);
     }

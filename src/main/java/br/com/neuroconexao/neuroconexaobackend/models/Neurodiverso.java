@@ -31,7 +31,7 @@ public class Neurodiverso {
     private String senha;
     private String telefone;
     private String datanascimento;
-    private String pessoadesuporte;
+   
 
     @JsonIgnore
     @ManyToMany
@@ -106,13 +106,7 @@ public class Neurodiverso {
         this.datanascimento = datanascimento;
     }
 
-    public String getPessoadesuporte() {
-        return pessoadesuporte;
-    }
-
-    public void setPessoadesuporte(String pessoadesuporte) {
-        this.pessoadesuporte = pessoadesuporte;
-    }
+   
 
     @JsonIgnore
     public Set<Neurodiverso> getNeurodiversos() {
@@ -122,4 +116,11 @@ public class Neurodiverso {
     public void setNeurodiversos(Set<Neurodiverso> neurodiversos) {
         this.neurodiversos = neurodiversos;
     }
+
+	public Object getTreinamentofamiliar() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
 }
