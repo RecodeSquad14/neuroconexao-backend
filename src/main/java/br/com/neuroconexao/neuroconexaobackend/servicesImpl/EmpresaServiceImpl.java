@@ -3,12 +3,14 @@ package br.com.neuroconexao.neuroconexaobackend.servicesImpl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import br.com.neuroconexao.neuroconexaobackend.models.Empresa;
 import br.com.neuroconexao.neuroconexaobackend.repositories.EmpresaRepository;
 import br.com.neuroconexao.neuroconexaobackend.services.EmpresaService;
 
+@Service
 public class EmpresaServiceImpl implements EmpresaService{
 	@Autowired
 	private EmpresaRepository empresaRepository;
