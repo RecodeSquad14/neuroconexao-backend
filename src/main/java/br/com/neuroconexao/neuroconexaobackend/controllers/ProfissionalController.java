@@ -2,7 +2,7 @@ package br.com.neuroconexao.neuroconexaobackend.controllers;
 
 
 import br.com.neuroconexao.neuroconexaobackend.models.Profissional;
-import br.com.neuroconexao.neuroconexaobackend.service.ProfissionalService;
+import br.com.neuroconexao.neuroconexaobackend.services.ProfissionalService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

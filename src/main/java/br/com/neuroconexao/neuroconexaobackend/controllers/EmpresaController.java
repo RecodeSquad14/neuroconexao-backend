@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import br.com.neuroconexao.neuroconexaobackend.models.Empresa;
 
-import br.com.neuroconexao.neuroconexaobackend.service.EmpresaService;
+import br.com.neuroconexao.neuroconexaobackend.services.EmpresaService;
 import jakarta.validation.Valid;
 
 public class EmpresaController {

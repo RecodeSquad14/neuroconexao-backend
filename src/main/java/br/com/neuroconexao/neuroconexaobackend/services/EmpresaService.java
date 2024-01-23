@@ -1,4 +1,4 @@
-package br.com.neuroconexao.neuroconexaobackend.service;
+package br.com.neuroconexao.neuroconexaobackend.services;
 
 import java.util.List;
 

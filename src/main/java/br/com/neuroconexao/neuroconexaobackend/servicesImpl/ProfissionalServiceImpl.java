@@ -2,7 +2,7 @@ package br.com.neuroconexao.neuroconexaobackend.servicesImpl;
 
 import br.com.neuroconexao.neuroconexaobackend.models.Profissional;
 import br.com.neuroconexao.neuroconexaobackend.repositories.ProfissionalRepository;
-import br.com.neuroconexao.neuroconexaobackend.service.ProfissionalService;
+import br.com.neuroconexao.neuroconexaobackend.services.ProfissionalService;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

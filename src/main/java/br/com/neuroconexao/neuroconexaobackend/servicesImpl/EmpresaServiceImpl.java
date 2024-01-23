@@ -7,7 +7,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import br.com.neuroconexao.neuroconexaobackend.models.Empresa;
 import br.com.neuroconexao.neuroconexaobackend.repositories.EmpresaRepository;
-import br.com.neuroconexao.neuroconexaobackend.service.EmpresaService;
+import br.com.neuroconexao.neuroconexaobackend.services.EmpresaService;
 
 public class EmpresaServiceImpl implements EmpresaService{
 	@Autowired
