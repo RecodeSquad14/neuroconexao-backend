@@ -18,6 +18,7 @@ import br.com.neuroconexao.neuroconexaobackend.services.EmpresaService;
 import jakarta.validation.Valid;
 
 public class EmpresaController {
+
 	@Autowired
 	private EmpresaService empresaService;
 
