@@ -16,12 +16,12 @@ public class NeurodiversoController {
     @Autowired
     private NeurodiversoService ns;
  
-    @PostMapping("/savenneurodiverso")
+    @PostMapping("/save")
     public Neurodiverso createNeurodiverso(@RequestBody Neurodiverso neurodiverso) {
         return ns.saveNeurodiverso(neurodiverso);
     }
  
-    @GetMapping("/allneurodiversos")
+    @GetMapping("/all")
     public List<Neurodiverso> getAllNeurodiversos() {
         return ns.getAllNeurodiversos();
     }

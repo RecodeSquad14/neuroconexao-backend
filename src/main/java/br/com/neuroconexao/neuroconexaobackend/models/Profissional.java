@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
-
 @Entity
 @Table(name = "profissional")
 public class Profissional {
@@ -50,7 +49,6 @@ public class Profissional {
         this.email = email;
         this.senha = senha;
         this.confirmarSenha = confirmarSenha;
-
     }
 
     public Long getId() {

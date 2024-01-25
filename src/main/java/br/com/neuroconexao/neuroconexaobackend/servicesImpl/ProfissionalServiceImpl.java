@@ -40,7 +40,6 @@ public class ProfissionalServiceImpl implements ProfissionalService {
         }
 
     }
-
     @Override
     public Profissional updateProfissional(Long id, Profissional profissionalAtualizado) {
         Profissional profissionalExistente = profissionalRepository.findById(id).orElse(null);
