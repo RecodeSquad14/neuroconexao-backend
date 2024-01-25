@@ -1,5 +1,6 @@
 package br.com.neuroconexao.neuroconexaobackend.servicesImpl;
 
+import br.com.neuroconexao.neuroconexaobackend.exception.ConfirmaSenhaException;
 import br.com.neuroconexao.neuroconexaobackend.models.Profissional;
 import br.com.neuroconexao.neuroconexaobackend.repositories.ProfissionalRepository;
 import br.com.neuroconexao.neuroconexaobackend.services.ProfissionalService;
@@ -32,11 +33,19 @@ public class ProfissionalServiceImpl implements ProfissionalService {
         return profissionalRepository.save(profissional);
     }
 
+    @Transactional
+    public void confirmaSenha(String senha, String confirmarSenha) {
+        if (!senha.equals(confirmarSenha)) {
+            throw new ConfirmaSenhaException("Senha não confere com confirmação de senha.");
+        }
+
+    }
+
     @Override
     public Profissional updateProfissional(Long id, Profissional profissionalAtualizado) {
         Profissional profissionalExistente = profissionalRepository.findById(id).orElse(null);
         if (profissionalExistente != null) {
-            profissionalExistente.setArea_de_atuacao(profissionalAtualizado.getArea_de_atuacao());
+            profissionalExistente.setAreaAtuacao(profissionalAtualizado.getArea_de_atuacao());
             profissionalExistente.setNome(profissionalAtualizado.getNome());
             profissionalExistente.setEmail(profissionalAtualizado.getEmail());
             profissionalExistente.setSenha(profissionalAtualizado.getSenha());

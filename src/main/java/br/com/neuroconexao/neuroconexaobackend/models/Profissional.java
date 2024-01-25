@@ -24,19 +24,24 @@ public class Profissional {
     @Size(min = 11, max = 11, message = "O CPF deve ter 11 caracteres")
     private String cpf;
 
-    @Column(name = "email")
-    @Pattern(regexp = ".+@.+\\..+", message = "O email deve conter o símbolo @")
-    private String email;
-
-    @Column(name = "senha")
-    private String senha;
-
     @Column(unique = true)
     @NotBlank(message = "O campo CRP nao pode estar em branco")
     private String crp;
 
+    @Column(name = "email")
+    @Pattern(regexp = ".+@.+\\..+", message = "O email deve conter o símbolo @")
+    private String email;
+    @Column(name = "senha")
+    @Size(min = 6, max = 6, message = "O CPF deve ter 6 caracteres")
+    private String senha;
+
+    @Column(name= "confirmarSenha")
+    @Size(min = 6, max = 6, message = "O CPF deve ter 6 caracteres")
+    private String confirmarSenha;
+
+
     public Profissional() {}
-    public Profissional(Long id, String areaAtuacao, String crp, String nome, String cpf, String email, String senha) {
+    public Profissional(Long id, String areaAtuacao, String crp, String nome, String cpf, String email, String senha, String confirmarSenha) {
         this.id = id;
         this.areaAtuacao= areaAtuacao;
         this.crp = crp;
@@ -44,6 +49,8 @@ public class Profissional {
         this.cpf = cpf;
         this.email = email;
         this.senha = senha;
+        this.confirmarSenha = confirmarSenha;
+
     }
 
     public Long getId() {
@@ -66,8 +73,8 @@ public class Profissional {
         return areaAtuacao;
     }
 
-    public void setArea_de_atuacao(String area_de_atuacao) {
-        this.areaAtuacao = area_de_atuacao;
+    public void setAreaAtuacao(String areaAtuacao) {
+        this.areaAtuacao = areaAtuacao;
     }
 
     public String getNome() {
@@ -102,5 +109,12 @@ public class Profissional {
         this.senha = senha;
     }
 
+    public String getConfirmarSenha() {
+        return confirmarSenha;
+    }
+
+    public void setConfirmarSenha(String confirmarSenha) {
+        this.confirmarSenha = confirmarSenha;
+    }
 }
 

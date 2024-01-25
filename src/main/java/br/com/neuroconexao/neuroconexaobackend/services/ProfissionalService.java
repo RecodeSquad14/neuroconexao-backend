@@ -15,5 +15,7 @@ public interface ProfissionalService {
     Profissional updateProfissional(Long id, Profissional profissionalAtualizada);
 
     void deleteProfissional(Long id);
+
+    void confirmaSenha(String senha, String confirmarSenha);
 }
 

@@ -1,11 +1,11 @@
 package br.com.neuroconexao.neuroconexaobackend.controllers;
 
 
+import br.com.neuroconexao.neuroconexaobackend.exception.ConfirmaSenhaException;
 import br.com.neuroconexao.neuroconexaobackend.models.Profissional;
 import br.com.neuroconexao.neuroconexaobackend.services.ProfissionalService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.annotation.Validated;
@@ -25,13 +25,17 @@ public class ProfissionalController {
     @PostMapping()
     public ResponseEntity<String> saveProfissional(@Valid @RequestBody Profissional profissional) {
         try {
+            profissionalService.confirmaSenha(profissional.getSenha(), profissional.getConfirmarSenha());
             profissionalService.saveProfissional(profissional);
             return ResponseEntity.ok("Profissional cadastrado");
+
+        } catch (ConfirmaSenhaException e) {
+            return ResponseEntity.status(400).body("Senha não confere com confirmação de senha");
+
         } catch (Exception e) {
             return ResponseEntity.status(500).body("Error saving profissional");
         }
     }
-
     @GetMapping
     public ResponseEntity listProfissionais() {
         List<Profissional> profissionais = profissionalService.getAllProfissionais();
