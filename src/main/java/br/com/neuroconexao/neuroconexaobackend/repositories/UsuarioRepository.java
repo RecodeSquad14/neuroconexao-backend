@@ -1,18 +1,11 @@
 package br.com.neuroconexao.neuroconexaobackend.repositories;
 
-
-import br.com.neuroconexao.neuroconexaobackend.models.Usuario;
+import br.com.neuroconexao.neuroconexaobackend.domain.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.stereotype.Repository;
+import org.springframework.security.core.userdetails.UserDetails;
 
-import java.util.Optional;
+public interface UsuarioRepository extends JpaRepository<Usuario, String> {
+    UserDetails findByLogin(String login);
 
-@Repository
-public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
-
-    Optional<Usuario> findByUsername(String username);
-
-    @Query("select u.role from Usuario u where u.username like :username")
-    Usuario.Role findRoleByUsername(String username);
+    Usuario save(Usuario usuario);
 }
