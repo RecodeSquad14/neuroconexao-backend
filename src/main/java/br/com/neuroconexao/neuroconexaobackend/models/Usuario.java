@@ -25,7 +25,7 @@ public class Usuario implements Serializable {
     private Role role;
 
     public enum Role {
-        ROLE_ADMIN, ROLE_CLIENTE
+        ROLE_ADMIN, ROLE_USER
     }
 
     public Usuario() {}

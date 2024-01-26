@@ -1,4 +1,5 @@
 package br.com.neuroconexao.neuroconexaobackend.controllers;
+import br.com.neuroconexao.neuroconexaobackend.exception.UsernameUniqueViolationException;
 import br.com.neuroconexao.neuroconexaobackend.models.Usuario;
 import br.com.neuroconexao.neuroconexaobackend.services.UsuarioService;
 import jakarta.validation.Valid;
@@ -21,9 +22,13 @@ public class UsuarioController {
         this.usuarioService = usuarioService;
     }
     @PostMapping
-    public ResponseEntity<Usuario> create(@Valid @RequestBody Usuario usuario) {
-        Usuario user = usuarioService.salvar(usuario);
-        return ResponseEntity.status(HttpStatus.CREATED).body(user);
+    public ResponseEntity<?> create(@Valid @RequestBody Usuario usuario) {
+        try {
+            Usuario user = usuarioService.salvar(usuario);
+            return ResponseEntity.status(HttpStatus.CREATED).body(user);
+        } catch (UsernameUniqueViolationException ex) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ex.getMessage());
+        }
     }
     @GetMapping("/{id}")
     @PreAuthorize("hasRole('ADMIN') OR (hasRole('CLIENTE') AND #id == authentication.principal.id)")
