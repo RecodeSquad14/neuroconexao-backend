@@ -2,6 +2,7 @@ package br.com.neuroconexao.neuroconexaobackend.models;
 
 import java.time.LocalDate;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import org.hibernate.validator.constraints.br.CPF;
 
 import jakarta.persistence.Entity;
@@ -37,6 +38,7 @@ public class Neurodiverso {
     private String telefone;
 
     @NotNull
+    @JsonFormat(pattern = "dd-MM-yyyy")
     private LocalDate datanascimento;
 
     // Getters and Setters
