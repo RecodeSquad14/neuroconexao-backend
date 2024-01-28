@@ -30,7 +30,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers(HttpMethod.POST, "/auth/login").permitAll()
                         .requestMatchers(HttpMethod.POST, "/auth/register").permitAll()
-                        .requestMatchers(HttpMethod.POST, "/neurodiverso/save").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/neurodiversos/save").permitAll()
                         .requestMatchers(HttpMethod.POST, "/profissionais/save").permitAll()
                         .requestMatchers(HttpMethod.POST, "/empresas/save").permitAll()
                         .anyRequest().authenticated()
