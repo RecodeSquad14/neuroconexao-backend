@@ -1,18 +1,16 @@
 package br.com.neuroconexao.neuroconexaobackend.models;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.time.LocalDate;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.hibernate.validator.constraints.br.CPF;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinTable;
-import jakarta.persistence.ManyToMany;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
 public class Neurodiverso {
@@ -21,24 +19,25 @@ public class Neurodiverso {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotNull
     private String neurodiversodivergencia;
 
-    @Column(name = "neurodiverso_name", length = 50, nullable = false)
+    @NotNull
     private String nome;
 
+    @CPF
     private String cpf;
+    @Email
     private String email;
-    private String senha;
-    private String telefone;
-    private String datanascimento;
-   
 
-    @JsonIgnore
-    @ManyToMany
-    @JoinTable(name = "neurodiverso_neurodiverso",
-            joinColumns = @JoinColumn(name = "neurodiverso_id"),
-            inverseJoinColumns = @JoinColumn(name = "neurodiverso_rel_id"))
-    private Set<Neurodiverso> neurodiversos = new HashSet<>();
+    @Min(6)
+    private String senha;
+
+    @NotNull
+    private String telefone;
+
+    @NotNull
+    private LocalDate datanascimento;
 
     // Getters and Setters
 
@@ -98,29 +97,12 @@ public class Neurodiverso {
         this.telefone = telefone;
     }
 
-    public String getDatanascimento() {
+    public LocalDate getDatanascimento() {
         return datanascimento;
     }
 
-    public void setDatanascimento(String datanascimento) {
+    public void setDatanascimento(LocalDate datanascimento) {
         this.datanascimento = datanascimento;
     }
 
-   
-
-    @JsonIgnore
-    public Set<Neurodiverso> getNeurodiversos() {
-        return neurodiversos;
-    }
-
-    public void setNeurodiversos(Set<Neurodiverso> neurodiversos) {
-        this.neurodiversos = neurodiversos;
-    }
-
-	public Object getTreinamentofamiliar() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	
 }
