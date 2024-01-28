@@ -20,15 +20,14 @@ import java.util.List;
 
 
 @RestController
-@PreAuthorize("hasAuthority('ROLE_ADMIN')")
-@RequestMapping("api/profissionais")
+@RequestMapping("/profissionais")
 @Validated
 public class ProfissionalController {
 
     @Autowired
     private ProfissionalService profissionalService;
 
-    @PostMapping()
+    @PostMapping("/save")
     public ResponseEntity<String> saveProfissional(@Valid @RequestBody Profissional profissional) {
         try {
             profissionalService.confirmaSenha(profissional.getSenha(), profissional.getConfirmarSenha());

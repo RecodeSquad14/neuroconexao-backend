@@ -35,7 +35,7 @@ public class EmpresaController {
 	}
 
 	// Persistencia Criação
-	@PostMapping()
+	@PostMapping("/save")
 	public ResponseEntity<String> saveEmpresa(@Valid @RequestBody Empresa empresa) {
 		try {
 			empresaService.saveEmpresa(empresa);
