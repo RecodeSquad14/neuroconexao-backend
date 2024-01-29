@@ -106,7 +106,7 @@ public class Neurodiverso {
         return dataNascimento;
     }
 
-    public void setdataNascimento(LocalDate dataNascimento) {
+    public void setDataNascimento(LocalDate dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
 

@@ -37,13 +37,13 @@ public class NeurodiversoController {
             @Valid @RequestBody Neurodiverso updatedNeurodiverso) {
         Neurodiverso neurodiverso = ns.getNeurodiversoById(id);
 
-        neurodiverso.setNeurodiversodivergencia(updatedNeurodiverso.getNeurodiversodivergencia());
+        neurodiverso.setNeurodiversidade(updatedNeurodiverso.getNeurodiversidade());
         neurodiverso.setNome(updatedNeurodiverso.getNome());
         neurodiverso.setCpf(updatedNeurodiverso.getCpf());
         neurodiverso.setEmail(updatedNeurodiverso.getEmail());
         neurodiverso.setSenha(updatedNeurodiverso.getSenha());
         neurodiverso.setTelefone(updatedNeurodiverso.getTelefone());
-        neurodiverso.setDatanascimento(updatedNeurodiverso.getDatanascimento());
+        neurodiverso.setDataNascimento(updatedNeurodiverso.getDataNascimento());
 
         ns.updateNeurodiverso(id, updatedNeurodiverso);
         return ResponseEntity.ok(neurodiverso);

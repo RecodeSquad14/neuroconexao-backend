@@ -38,13 +38,13 @@ public class NeurodiversoServiceImpl implements NeurodiversoService {
         Optional<Neurodiverso> optionalNeurodiverso = neurodiversoRepository.findById(id);
         if (optionalNeurodiverso.isPresent()) {
             Neurodiverso existingNeurodiverso = optionalNeurodiverso.get();
-            existingNeurodiverso.setNeurodiversodivergencia(neurodiverso.getNeurodiversodivergencia());
+            existingNeurodiverso.setNeurodiversidade(neurodiverso.getNeurodiversidade());
             existingNeurodiverso.setNome(neurodiverso.getNome());
             existingNeurodiverso.setCpf(neurodiverso.getCpf());
             existingNeurodiverso.setEmail(neurodiverso.getEmail());
             existingNeurodiverso.setSenha(neurodiverso.getSenha());
             existingNeurodiverso.setTelefone(neurodiverso.getTelefone());
-            existingNeurodiverso.setDatanascimento(neurodiverso.getDatanascimento());
+            existingNeurodiverso.setDataNascimento(neurodiverso.getDataNascimento());
 
             // Atualize outros campos conforme necessário
             return neurodiversoRepository.save(existingNeurodiverso);
