@@ -10,7 +10,7 @@ import jakarta.validation.Valid;
 
 @CrossOrigin
 @RestController
-@RequestMapping("/neurodiverso")
+@RequestMapping("/neurodiversos")
 public class NeurodiversoController {
 
     @Autowired

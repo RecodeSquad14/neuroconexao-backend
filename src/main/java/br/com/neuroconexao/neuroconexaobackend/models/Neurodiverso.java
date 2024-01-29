@@ -4,6 +4,8 @@ import java.time.LocalDate;
 
 import org.hibernate.validator.constraints.br.CPF;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -20,13 +22,14 @@ public class Neurodiverso {
     private Long id;
 
     @NotNull
-    private String neurodiversodivergencia;
+    private String neurodiversidade;
 
     @NotNull
     private String nome;
 
     @CPF
     private String cpf;
+
     @Email
     private String email;
 
@@ -37,7 +40,8 @@ public class Neurodiverso {
     private String telefone;
 
     @NotNull
-    private LocalDate datanascimento;
+
+    private LocalDate dataNascimento;
 
     // Getters and Setters
 
@@ -49,12 +53,12 @@ public class Neurodiverso {
         this.id = id;
     }
 
-    public String getNeurodiversodivergencia() {
-        return neurodiversodivergencia;
+    public String getNeurodiversidade() {
+        return neurodiversidade;
     }
 
-    public void setNeurodiversodivergencia(String neurodiversodivergencia) {
-        this.neurodiversodivergencia = neurodiversodivergencia;
+    public void setNeurodiversidade(String neurodiversidade) {
+        this.neurodiversidade = neurodiversidade;
     }
 
     public String getNome() {
@@ -97,12 +101,12 @@ public class Neurodiverso {
         this.telefone = telefone;
     }
 
-    public LocalDate getDatanascimento() {
-        return datanascimento;
+    public LocalDate getDataNascimento() {
+        return dataNascimento;
     }
 
-    public void setDatanascimento(LocalDate datanascimento) {
-        this.datanascimento = datanascimento;
+    public void setdataNascimento(LocalDate dataNascimento) {
+        this.dataNascimento = dataNascimento;
     }
 
 }
