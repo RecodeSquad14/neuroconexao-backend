@@ -31,11 +31,11 @@ public class Profissional {
     @Pattern(regexp = ".+@.+\\..+", message = "O email deve conter o símbolo @")
     private String email;
     @Column(name = "senha")
-    @Size(min = 6, max = 6, message = "O CPF deve ter 6 caracteres")
+    @Size(min = 6, max = 6, message = "A senha deve ter 6 caracteres")
     private String senha;
 
     @Column(name= "confirmarSenha")
-    @Size(min = 6, max = 6, message = "O CPF deve ter 6 caracteres")
+    @Size(min = 6, max = 6, message = "A senha deve ter 6 caracteres")
     private String confirmarSenha;
 
 
