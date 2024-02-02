@@ -1,5 +1,7 @@
 # Neuro Conexão
-O site NeuroConexão tem como objetivo facilitar a conexão entre pessoas neurodivergentes e empresas, proporcionando suporte psicológico para os candidatos e oferecendo treinamentos especializados tanto para as pessoas neurodivergentes quanto para as empresas. Além disso, nosso serviço abrange o suporte a familiares e pessoas de apoio durante todo o processo de empregabilidade. Estamos empenhados em criar um ambiente inclusivo e acolhedor, promovendo não apenas a colocação profissional, mas também o desenvolvimento contínuo e a compreensão mútua entre todas as partes envolvidas.
+**Sobre o projeto**
+
+O site NeuroConexão tem como objetivo facilitar a conexão entre pessoas neurodivergentes e empresas, proporcionando suporte psicológico para os candidatos e oferecendo treinamentos especializados tanto para as pessoas neurodivergentes quanto para os recrutadores. Além disso, nosso serviço abrange o suporte a familiares e pessoas de apoio durante todo o processo de empregabilidade. Estamos empenhados em criar um ambiente inclusivo e acolhedor, promovendo não apenas a colocação profissional, mas também o desenvolvimento contínuo e a compreensão mútua entre todas as partes envolvidas.
 
 ## NeuroConexão-Backend
 
