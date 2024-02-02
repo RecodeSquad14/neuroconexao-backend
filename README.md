@@ -1,17 +1,18 @@
+# Neuro Conexão
+O site NeuroConexão tem como objetivo facilitar a conexão entre pessoas neurodivergentes e empresas, proporcionando suporte psicológico para os candidatos e oferecendo treinamentos especializados tanto para as pessoas neurodivergentes quanto para as empresas. Além disso, nosso serviço abrange o suporte a familiares e pessoas de apoio durante todo o processo de empregabilidade. Estamos empenhados em criar um ambiente inclusivo e acolhedor, promovendo não apenas a colocação profissional, mas também o desenvolvimento contínuo e a compreensão mútua entre todas as partes envolvidas.
 
-# NeuroConexão-Backend
+## NeuroConexão-Backend
 
-Este é o repositório do NeuroConexão-Backend, um projeto desenvolvido utilizando Spring Boot 3.2.1 com a IDE IntelliJ, banco de dados MySQL Workbench 8 e integração com o Postman para testes.
+Este é o repositório do NeuroConexão-Backend, um projeto desenvolvido utilizando Spring Boot 3.2.1 com banco de dados MySQL 8 e integração com o Postman para testes.
 
 ## Configuração do Ambiente de Desenvolvimento
 
-1. **Spring Boot 3.2.1 e IntelliJ:**
+1. **Spring Boot 3.2.1:**
    - Certifique-se de ter o Spring Boot 3.2.1 e o Java 17 instalados em sua máquina.
-   - Abra o projeto usando a IDE IntelliJ.
-
-2. **Banco de Dados MySQL Workbench 8:**
+   
+2. **Banco de Dados MySQL 8:**
    - Configure as propriedades do banco de dados no arquivo `application.properties`.
-   - Certifique-se de ter o MySQL Workbench 8 configurado e acessível.
+   - Certifique-se de ter o MySQL 8 configurado e acessível.
 
 ## Autenticação e Autorização
 
