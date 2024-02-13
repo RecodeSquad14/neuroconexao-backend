@@ -1,13 +1,10 @@
 package br.com.neuroconexao.neuroconexaobackend.models;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
 
+import java.util.List;
 
 
 @Entity
@@ -35,13 +32,21 @@ public class Empresa {
 	
 	@Column(name ="")
 	private String senha;
-	
-	
-	
-	public Empresa() {
-		
+
+	@OneToMany(mappedBy = "empresa")
+	private List<Vaga> vagas;
+
+	public List<Vaga> getVagas() {
+		return vagas;
 	}
-	
+	public void setVagas(List<Vaga> vagas) {
+		this.vagas = vagas;
+	}
+
+	public Empresa() {
+
+	}
+
 	public Empresa(Long id, String nome, String cnpj, String endereco,String email_corporatico, String senha) {
 		this.setNome(nome);
 		this.setCnpj(cnpj);
