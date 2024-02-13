@@ -23,13 +23,13 @@ O projeto utiliza Spring Security em conjunto com JWT (JSON Web Token) para aute
 ### Registro de Usuários
 
 - Utilize o método `POST` no Postman para registrar um usuário.
-- Endpoint: `localhost:8080/register`
+- Endpoint: `localhost:8080/auth/register`
 - Parâmetros: `login`, `password` e `role` (0 para admin, 1 para user).
 
 ### Autenticação e Geração de Token
 
 - Utilize o método `POST` no Postman para autenticar e gerar um token.
-- Endpoint: `localhost:8080/authenticate`
+- Endpoint: `localhost:8080/auth/login`
 - Parâmetros: `login` e `password`.
 
 ### Acesso aos Recursos Protegidos
