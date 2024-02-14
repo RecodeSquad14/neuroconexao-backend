@@ -1,44 +1,18 @@
 package br.com.neuroconexao.neuroconexaobackend.services;
 
 import br.com.neuroconexao.neuroconexaobackend.models.Vaga;
-import br.com.neuroconexao.neuroconexaobackend.repositories.VagaRepository;
-import org.springframework.stereotype.Service;
-
 
 import java.util.List;
 
-@Service
-public class VagaService {
-    private VagaRepository vagaRepository;
+public interface VagaService {
+    List<Vaga> getAllVagas();
 
-    public VagaService(VagaRepository vagaRepository) {
-        this.vagaRepository = vagaRepository;
-    }
+    Vaga getVagaById(Long id);
 
+    Vaga saveVaga(Vaga vaga);
 
-    public Vaga saveVaga(Vaga vaga) {
-        return vagaRepository.save(vaga);
-    }
+    Vaga updateVaga(Long id, Vaga vagaAtt);
 
-    public List<Vaga> getAllVagasDTO() {return vagaRepository.findAll();
-    }
+    void deleteVaga(Long id);
 
-    public Vaga getVagaById( Long id) {
-        return vagaRepository.findById(id).orElse(null);
-    }
-    public Vaga updateVaga(Long id, Vaga vagaAtualizada) {
-        Vaga vagaExistente = vagaRepository.findById(id).orElse(null);
-        if (vagaExistente != null) {
-           vagaExistente.setTituloVaga(vagaAtualizada.getTituloVaga());
-           vagaExistente.setDescricao(vagaAtualizada.getDescricao());
-            return vagaRepository.save(vagaExistente);
-        } else {
-            throw new RuntimeException("Vaga com o ID" + id + "não encontrada.");
-        }
-    }
-
-    public void deleteVaga(Long id) {
-    }
 }
-
-

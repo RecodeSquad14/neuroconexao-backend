@@ -3,8 +3,10 @@ package br.com.neuroconexao.neuroconexaobackend.models;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
+import lombok.Setter;
 
 import java.util.List;
+import java.util.Set;
 
 
 @Entity
@@ -13,7 +15,7 @@ public class Empresa {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-	private Long id_empresa;
+	private Long id;
 	
 	@Column(name ="nome")
 	private String nome;
@@ -34,34 +36,28 @@ public class Empresa {
 	private String senha;
 
 	@OneToMany(mappedBy = "empresa")
-	private List<Vaga> vagas;
-
-	public List<Vaga> getVagas() {
-		return vagas;
-	}
-	public void setVagas(List<Vaga> vagas) {
-		this.vagas = vagas;
-	}
+	private Set<Vaga> vagas;
 
 	public Empresa() {
 
 	}
 
-	public Empresa(Long id, String nome, String cnpj, String endereco,String email_corporatico, String senha) {
-		this.setNome(nome);
-		this.setCnpj(cnpj);
-		this.setEndereco(endereco);
-		this.setEmail_corporativo(email_corporatico);
-		this.setSenha(senha);
-	}
-	
-	
-	public Long getId_empresa() {
-		return id_empresa;
+	public Empresa(Long id, String nome, String cnpj, String endereco, String email_corporativo, String senha) {
+		this.id = id;
+		this.nome = nome;
+		this.cnpj = cnpj;
+		this.endereco = endereco;
+		this.email_corporativo = email_corporativo;
+		this.senha = senha;
+
 	}
 
-	public void setId_empresa(Long id_empresa) {
-		this.id_empresa = id_empresa;
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public String getNome() {
